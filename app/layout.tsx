@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
+  title: 'FastBase',
+  description: 'Lightning-fast, beautiful, and AI-powered PostgreSQL client. Be the first to experience the future of database management.',
 }
 
 export default function RootLayout({
