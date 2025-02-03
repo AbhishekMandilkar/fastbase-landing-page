@@ -1,5 +1,6 @@
 import {ArrowRight} from "lucide-react";
 import {Button} from "@/components/ui/button";
+import {WaitlistDialog} from "./waitlist-dialog";
 
 export default function Hero() {
   return (
@@ -15,10 +16,12 @@ export default function Hero() {
             first to experience the future of database management.
           </p>
           <div className="flex gap-4">
-            <Button size="lg">
-              Join Waitlist
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
+            <WaitlistDialog>
+              <Button size="lg">
+                Join Waitlist
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </WaitlistDialog>
           </div>
         </div>
       </section>

@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardTitle } from "@/components/ui/card"
+import {WaitlistDialog} from "./waitlist-dialog"
 
 export default function CTA() {
   return (
@@ -11,10 +12,12 @@ export default function CTA() {
           <CardDescription className="text-primary-foreground/80">
             Join our waitlist and get early access to the future of PostgreSQL management on Mac.
           </CardDescription>
-          <Button size="lg" variant="secondary">
-            Join Waitlist
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
+          <WaitlistDialog>
+            <Button size="lg" variant="secondary">
+              Join Waitlist
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </WaitlistDialog>
         </CardContent>
       </Card>
     </section>

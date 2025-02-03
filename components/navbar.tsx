@@ -3,6 +3,7 @@ import { Database } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import BrandIcon from "./brand-icon"
+import {WaitlistDialog} from "./waitlist-dialog"
 
 export default function Navbar() {
   return (
@@ -22,7 +23,9 @@ export default function Navbar() {
           <Link href="#faq" className="text-sm font-medium text-muted-foreground hover:text-primary">
             FAQ
           </Link>
-          <Button variant="default">Join Waitlist</Button>
+          <WaitlistDialog>
+            <Button variant="default">Join Waitlist</Button>
+          </WaitlistDialog>
         </nav>
       </div>
     </header>
