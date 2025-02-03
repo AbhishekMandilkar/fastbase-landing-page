@@ -1,1 +1,1 @@
-<img src='resources/image.png' width=200 />
+<img src='resources/image.png' width=600 />
