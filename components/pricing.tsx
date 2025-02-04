@@ -30,7 +30,7 @@ export default function Pricing() {
             </ul>
           </CardContent>
           <CardFooter>
-            <Button className="w-full">Join Waitlist</Button>
+            <Button className="w-full">Coming Soon</Button>
           </CardFooter>
         </Card>
         <Card>
@@ -56,7 +56,7 @@ export default function Pricing() {
             </ul>
           </CardContent>
           <CardFooter>
-            <Button className="w-full">Join Waitlist</Button>
+            <Button className="w-full">Coming Soon</Button>
           </CardFooter>
         </Card>
       </div>

@@ -21,13 +21,33 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Invalid email address" }, { status: 400 })
     }
 
-    // // Create a new waitlist record
-    // const record = await prisma.waitlist.create({
-    //   data: { email },
-    // });
+    // Check if email already exists
+    const existingUser = await prisma.waitlist.findUnique({
+      where: { email },
+    });
+
+    if (existingUser) {
+      return NextResponse.json(
+        { error: "This email is already on the waitlist" },
+        { status: 409 }
+      );
+    }
+
+    try {
+      // Create a new waitlist record
+      await prisma.waitlist.create({
+        data: { email },
+      });
+    } catch (error) {
+      console.error("Error adding to waitlist:", error);
+      return NextResponse.json(
+        { error: "Internal server error" },
+        { status: 500 }
+      );
+    }
 
     const { data, error } = await resend.emails.send({
-      from: 'Fastbase <fastbase@fastbase.com>',
+      from: "updates@fastbase.in",
       to: [email],
       subject: "Welcome to the Waitlist! 🎉",
       react: EmailTemplate(),
