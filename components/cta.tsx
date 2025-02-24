@@ -5,10 +5,10 @@ import {WaitlistDialog} from "./waitlist-dialog"
 
 export default function CTA() {
   return (
-    <section className="container py-24">
+    <section className="container py-12 md:py-24">
       <Card className="bg-primary text-primary-foreground">
         <CardContent className="flex flex-col items-center gap-6 p-12 text-center">
-          <CardTitle className="text-3xl font-bold">Be the First to Experience FastBase</CardTitle>
+          <CardTitle className="text-3xl font-bold">Be the First to Experience Fastbase</CardTitle>
           <CardDescription className="text-primary-foreground/80">
             Join our waitlist and get early access to the future of PostgreSQL management on Mac.
           </CardDescription>

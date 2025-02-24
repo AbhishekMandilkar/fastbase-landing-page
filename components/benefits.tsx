@@ -3,8 +3,8 @@ import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/ca
 
 export default function Benefits() {
   return (
-    <section id="features" className="container py-24">
-      <h2 className="text-3xl font-bold tracking-tighter text-center mb-12">Why PostgreSQL Developers Love FastBase</h2>
+    <section id="features" className="container py-12 md:py-24">
+      <h2 className="text-3xl font-bold tracking-tighter text-center mb-12">Why PostgreSQL Developers Love Fastbase</h2>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         <Card>
           <CardHeader>

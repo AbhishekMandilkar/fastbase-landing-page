@@ -53,10 +53,13 @@ export async function POST(request: Request) {
       react: EmailTemplate(),
     });
 
-    if (error) {
-      console.error("Error sending email:", error)
-      return NextResponse.json({ error: "Failed to send email" }, { status: 500 })
-    }
+
+    const notifEmail = await resend.emails.send({
+      from: "updates@fastbase.in",
+      to: ["a.a.mandilkar@gmail.com"],
+      subject: ` Waitlist member added! 🎉 - ${email}`,
+      html: `<p> member joined the waitlist </p>`
+    });
 
     return NextResponse.json({ success: true }, { status: 201 })
   } catch (error) {

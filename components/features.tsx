@@ -1,5 +1,6 @@
 import { Database, FileDown, Bot, Shield, Plus } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import SmoothMount from "./smooth-mount"
 
 const features = [
   {
@@ -34,23 +35,23 @@ const features = [
 export default function Features() {
   return (
     <section id="features" className="container py-24">
-       <h2 className="text-3xl font-bold tracking-tighter text-center mb-12">Upcoming Features</h2>
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {features.map((feature, index) => (
-          <Card key={index} className="border-0 shadow-none">
-            <CardHeader className="gap-4">
-              <div className="size-14 rounded-2xl bg-primary/10 flex items-center justify-center">
-                <feature.icon className="size-7 text-primary" />
-              </div>
-              <div className="space-y-3">
-                <CardTitle className="text-xl font-semibold">{feature.title}</CardTitle>
-                <CardContent className="text-muted-foreground p-0">{feature.description}</CardContent>
-              </div>
-            </CardHeader>
-          </Card>
-        ))}
-      </div>
-    </section>
+    <h2 className="text-3xl font-bold tracking-tighter text-center mb-12">Upcoming Features</h2>
+    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 place-items-center">
+      {features.map((feature, index) => (
+        <Card key={index} className="border-0 shadow-none w-full">
+          <CardHeader className="gap-4">
+            <div className="size-14 rounded-2xl bg-primary/10 flex items-center justify-center">
+              <feature.icon className="size-7 text-primary" />
+            </div>
+            <div className="space-y-3">
+              <CardTitle className="text-xl font-semibold">{feature.title}</CardTitle>
+              <CardContent className="text-muted-foreground p-0">{feature.description}</CardContent>
+            </div>
+          </CardHeader>
+        </Card>
+      ))}
+    </div>
+  </section>
   )
 }
 

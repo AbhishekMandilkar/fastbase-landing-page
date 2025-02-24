@@ -6,7 +6,7 @@ const BrandIcon = (props: { className?: string }) => {
   return (
     <Image
       src={img}
-      alt="FastBase"
+      alt="Fastbase"
       className={cn(props.className, "size-10")}
     />
   );

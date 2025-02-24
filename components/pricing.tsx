@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="container py-24">
+    <section id="pricing" className="container py-12 md:py-24">
       <h2 className="text-3xl font-bold tracking-tighter text-center mb-12">Simple, Transparent Pricing</h2>
       <div className="grid gap-6 sm:grid-cols-2 lg:max-w-4xl lg:mx-auto">
         <Card>

@@ -11,7 +11,7 @@ export default function Navbar() {
       <div className="container flex h-14 items-center justify-between">
         <div className="flex items-center gap-2 font-bold">
           <BrandIcon className="w-6 h-6" />
-          FastBase
+          Fastbase
         </div>
         <nav className="flex items-center gap-6">
           <Link href="#features" className="text-sm font-medium text-muted-foreground hover:text-primary">
