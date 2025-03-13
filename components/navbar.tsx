@@ -13,7 +13,7 @@ export default function Navbar() {
           <BrandIcon className="w-6 h-6" />
           Fastbase
         </div>
-        <nav className="flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-6 ">
           <Link href="#features" className="text-sm font-medium text-muted-foreground hover:text-primary">
             Features
           </Link>
