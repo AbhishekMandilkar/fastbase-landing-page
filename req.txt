@@ -1,32 +1,35 @@
-Project Name: Fastbase
+Fastbase
+Description
+Fastbase is a modern PostgreSQL client reimagining database management through elegant design and user-centric experience. Crafted to transform how developers interact with databases, Fastbase brings a fresh, clean approach to PostgreSQL management that prioritizes visual clarity and intuitive workflows.
+Target Market
 
-Description:
-A modern, high-performance PostgreSQL client designed to replace Beekeeper Studio by addressing its slow and outdated UI. This product offers a sleek and efficient experience for PostgreSQL database management.
+Developers who value aesthetics and simplicity in their development tools
+PostgreSQL users seeking a more intuitive and visually appealing database management experience
+Design-conscious professionals who believe that developer tools should be as thoughtfully crafted as the code they write
+Teams and individuals looking for a streamlined, modern approach to database interactions
 
-Target Market:
-- Mac users looking for a high-performance PostgreSQL client.
-- PostgreSQL developers frustrated with existing clients that are either paid, slow, or have outdated UIs.
-- Users looking for a free, fast, and modern alternative with AI-powered features specifically for PostgreSQL.
+Key Features
 
-Key Features:
-- Blazing Fast Performance: Optimized to ensure smooth and responsive interactions with PostgreSQL databases.
-- Modern UI: Intuitive and aesthetically pleasing user interface designed for PostgreSQL workflows.
-- Advanced PostgreSQL Features: Full support for PostgreSQL-specific features like arrays, JSON, materialized views, and extensions.
-- PostgreSQL-Aware Auto-Completion: Smart suggestions for PostgreSQL syntax, functions, and operators.
-- AI-Powered PostgreSQL Query Suggestions: Intelligent recommendations optimized for PostgreSQL best practices.
-- Native PostgreSQL Table Editing: Edit table data directly with full support for PostgreSQL data types.
-- Query History & Saving: Save and organize frequently used PostgreSQL queries.
-- Export Options: Export data in CSV, JSON, JSONL, or PostgreSQL-compatible SQL formats.
-- Secure Connections: SSL encryption and SSH tunneling support for PostgreSQL connections.
+Clean, Minimalist UI: Designed to reduce visual noise and cognitive load
+Intuitive Workflow: Streamlined interface that makes database management feel effortless
+Advanced PostgreSQL Features: Comprehensive support for PostgreSQL capabilities
+Smart Auto-Completion: Intelligent syntax suggestions that enhance productivity
+AI-Powered Query Insights: Helpful recommendations to optimize database interactions
+Native Table Editing: Seamless data manipulation with a focus on user experience
+Query Management: Efficient saving and organization of frequently used queries
+Flexible Export Options: Multiple format support for data portability
+Secure Connections: Robust security with SSL and SSH tunneling
 
-Vision & Goals:
-- Provide a Mac-only, lightweight, faster, and user-friendly PostgreSQL client.
-- Focus on PostgreSQL-specific optimizations and features.
-- Ensure seamless support for all PostgreSQL versions (10+).
-- Focus on performance optimizations to eliminate UI lag when handling large PostgreSQL datasets.
-- Integrate AI-driven features to enhance PostgreSQL query writing and database management.
-- Maintain an open-source model for community contributions, especially for PostgreSQL-specific features.
+Vision & Goals
 
-This app basic version is free and paid version for ai-related features & export options.
+Create the most visually pleasing and user-friendly PostgreSQL client
+Prove that database tools can be both powerful and beautiful
+Provide a native Mac experience that feels like a natural extension of a developer's workflow
+Ensure comprehensive support for PostgreSQL versions 10+
+Develop an open-source solution that evolves with community input
+Demonstrate that software design can dramatically improve developer productivity
 
-This document serves as a reference for the LLM context, ensuring continuity and consistency in discussions regarding this PostgreSQL-focused product. 
+Product Model
+
+Basic Version: Free, with core PostgreSQL management features
+Pro Version: Advanced AI-powered features and enhanced export capabilities
