@@ -17,13 +17,12 @@ export default function Hero() {
           speedSegment={0.3}
           className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl "
         >
-          The Next-Gen PostgreSQL Client Coming Soon to Mac
+          Databases Are Complex—Your Client Shouldn’t Be
         </TextEffect>
         <SmoothMount>
           <div className="flex flex-col items-center text-center space-y-6">
             <p className="max-w-[600px] text-lg text-muted-foreground">
-              Lightning-fast, beautiful, and AI-powered PostgreSQL client. Be
-              the first to experience the future of database management.
+            Fastbase brings clarity, speed, and elegance to PostgreSQL management.
             </p>
             <div className="flex gap-4">
               <WaitlistDialog>
