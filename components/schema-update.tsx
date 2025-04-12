@@ -48,9 +48,7 @@ export default function SchemaViewerUpdate(props: { isEmail?: boolean }) {
           </p>
 
           {!isEmail ? (
-            <WaitlistDialog>
-              <Button>Join the Waitlist</Button>
-            </WaitlistDialog>
+            <WaitlistDialog />
           ) : (
             <a href="https://fastbase.in">Join the Waitlist</a>
           )}

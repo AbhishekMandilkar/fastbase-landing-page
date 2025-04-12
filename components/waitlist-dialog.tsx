@@ -1,105 +1,68 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import { Button } from "@/components/ui/button"
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
-import Confetti from 'react-confetti'
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import {toast} from "sonner";
+import {Loader2} from "lucide-react";
 
-export function WaitlistDialog(props: {children: React.ReactNode}) {
-  const [email, setEmail] = useState("")
-  const [error, setError] = useState("")
-  const [isLoading, setIsLoading] = useState(false)
-  const [isSuccess, setIsSuccess] = useState(false)
-
+export function WaitlistDialog() {
+  const [email, setEmail] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const resetState = () => {
-    setEmail("")
-    setError("")
-    setIsLoading(false)
-    setIsSuccess(false)
-  }
+    setEmail("");
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsLoading(true)
-    
+    e.preventDefault();
+
     // Simple email validation using regex
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      setError("Please enter a valid email address.")
-      setIsLoading(false)
-      return
+
+      toast.error("Please enter a valid email address.");
+      return;
     }
-    setError("")
- 
+
     try {
+      setIsLoading(true);
       const response = await fetch("/api/waitlist", {
         method: "POST",
         body: JSON.stringify({ email }),
-      })
+      });
       if (response.ok) {
-        setIsSuccess(true)
-        setEmail("")
-        setError("")
+        setEmail("");
+        toast.success("Welcome to the waitlist!");
       } else {
-        const data = await response.json()
-        setError(data.error || "Failed to join waitlist. Please try again.")
+        const data = await response.json();
+        toast.error(data.error || "Failed to join waitlist. Please try again.");
       }
     } catch (err) {
-      setError("An error occurred. Please try again.")
+      toast.error("An error occurred. Please try again.");
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-  }
-
-
-  const title = isSuccess ? "Welcome to the Waitlist!" : "Join our Waitlist"
-  const description = isSuccess ? "We'll keep you posted on our progress." : "Be the first to know when we launch. Enter your email below."
+  };
 
   return (
-    <Dialog onOpenChange={(open) => {
-      if (!open) resetState()
-    }}>
-      <DialogTrigger asChild>{props?.children}</DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
-        <DialogHeader>
-          <DialogTitle>{title}</DialogTitle>
-          <DialogDescription>
-            {description}
-          </DialogDescription>
-        </DialogHeader>
-        {isSuccess ? (
-          <div className="flex flex-col items-center justify-center h-full p-8">
-          {/* <Confetti width={400} height={400} /> */}
-          <p className="text-8xl">🎉</p>
-          </div>
-        ) : (
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <Input
-              type="email"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => {
-                setEmail(e.target.value);
-                if (error) setError("");
-              }}
-              required
-              disabled={isLoading}
-            />
-            {error && <p className="text-red-500 text-sm">{error}</p>}
-            <Button type="submit" className="w-full" disabled={isLoading}>
-              {isLoading ? "Joining..." : "Join Now"}
-            </Button>
-          </form>
-        )}
-      </DialogContent>
-    </Dialog>
+    <form
+      onSubmit={handleSubmit}
+      className="space-x-4 flex items-center justify-center transition-all duration-300"
+    >
+      <Input
+        type="email"
+        className="min-w-[300px] transition-all duration-300"
+        placeholder="Enter your email"
+        value={email}
+        onChange={(e) => {
+          setEmail(e.target.value);
+        }}
+        required
+        disabled={isLoading}
+      />
+      <Button type="submit" className=" transition-all duration-300 w-[150px]" disabled={isLoading}>
+        {isLoading ? <Loader2 className="size-4 animate-spin" /> : "Join Now"}
+      </Button>
+    </form>
   );
-} 
+}
