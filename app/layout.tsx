@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import Head from 'next/head';
 import { Analytics } from '@vercel/analytics/next';
 export const metadata: Metadata = {
   title: 'Fastbase',
@@ -15,12 +14,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-        <link
-          rel="icon"
-          href="/favicons/favicon.ico"
-        />
-      </Head>
       <body>{children}</body>
       <Analytics />
     </html>
