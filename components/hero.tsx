@@ -14,7 +14,9 @@ export default function Hero() {
     <section className="container py-12 md:py-24 space-y-6 relative">
       <div className="flex flex-col items-center text-center relative space-y-6">
         <Link href="/apr-25">
-          <ShinyButton>Recent Updates</ShinyButton>
+          <ShinyButton className="flex items-center gap-2">
+            Recent Updates <ArrowRight className="w-4 h-4" />
+          </ShinyButton>
         </Link>
         <TextEffect
           preset="fade-in-blur"
