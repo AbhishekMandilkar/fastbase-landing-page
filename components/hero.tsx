@@ -6,11 +6,16 @@ import screenshot from "@/resources/img2.png";
 import SmoothMount from "./smooth-mount";
 import { TextEffect } from "./ui/text-effect";
 import HeroBanner from "./hero-banners";
+import {ShinyButton} from "./ui/shiny-button";
+import Link from "next/link";
 
 export default function Hero() {
   return (
     <section className="container py-12 md:py-24 space-y-6 relative">
       <div className="flex flex-col items-center text-center relative space-y-6">
+        <Link href="/apr-25">
+          <ShinyButton>Recent Updates</ShinyButton>
+        </Link>
         <TextEffect
           preset="fade-in-blur"
           speedReveal={1.5}
@@ -27,9 +32,6 @@ export default function Hero() {
             </p>
             <div className="flex gap-4">
               <WaitlistDialog />
-              <Button variant="outline">
-                Updates
-              </Button>
             </div>
             <HeroBanner />
           </div>
