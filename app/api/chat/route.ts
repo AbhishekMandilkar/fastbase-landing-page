@@ -1,5 +1,6 @@
 import { openai } from '@ai-sdk/openai';
-import { streamText } from 'ai';
+import { generateObject, streamText } from 'ai';
+import {z} from 'zod';
 
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
@@ -7,10 +8,13 @@ export const maxDuration = 30;
 export async function POST(req: Request) {
   const { messages } = await req.json();
 
-  const result = streamText({
+  const result = await generateObject({
     model: openai('gpt-4o'),
     messages,
+    schema: z.object({
+      query: z.string(),
+    }),
   });
-
-  return result.toDataStreamResponse();
+  
+  return result.object.query;
 }
