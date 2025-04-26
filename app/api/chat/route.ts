@@ -1,5 +1,6 @@
 import { openai } from '@ai-sdk/openai';
 import { generateObject, streamText } from 'ai';
+import {NextResponse} from 'next/server';
 import {z} from 'zod';
 
 // Allow streaming responses up to 30 seconds
@@ -15,6 +16,8 @@ export async function POST(req: Request) {
       query: z.string(),
     }),
   });
-  
-  return result.object.query;
+
+  return NextResponse.json({
+    query: result.object.query,
+  });
 }
