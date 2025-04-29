@@ -51,7 +51,7 @@ export function WaitlistDialog() {
     >
       <Input
         type="email"
-        className="min-w-[300px] transition-all duration-300"
+        className=" sm:min-w-[300px] transition-all duration-300"
         placeholder="Enter your email"
         value={email}
         onChange={(e) => {

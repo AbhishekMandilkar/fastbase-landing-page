@@ -11,7 +11,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="container py-12 md:py-24 space-y-6 relative">
+    <section className="container py-12 px-4 md:py-24 space-y-6 relative">
       <div className="flex flex-col items-center text-center relative space-y-6">
         <Link href="/apr-25">
           <ShinyButton className="flex items-center gap-2">
