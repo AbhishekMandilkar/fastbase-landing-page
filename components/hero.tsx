@@ -8,6 +8,7 @@ import { TextEffect } from "./ui/text-effect";
 import HeroBanner from "./hero-banners";
 import {ShinyButton} from "./ui/shiny-button";
 import Link from "next/link";
+import { WaitlistCount } from "./waitlist-count";
 
 export default function Hero() {
   return (
@@ -24,7 +25,7 @@ export default function Hero() {
           speedSegment={0.9}
           className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl "
         >
-          Databases Are Complex—Your Client Shouldn’t Be
+          Databases Are Complex—Your Client Shouldn't Be
         </TextEffect>
         <SmoothMount>
           <div className="flex flex-col items-center text-center space-y-6">
@@ -35,6 +36,7 @@ export default function Hero() {
             <div className="flex gap-4">
               <WaitlistDialog />
             </div>
+            <WaitlistCount />
             <HeroBanner />
           </div>
         </SmoothMount>
